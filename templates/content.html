@@ -2,9 +2,21 @@
 {% load cms_tags %}
 
 {% block content %}
-  {% placeholder "content" or %}
-    <p>This page has no content yet. Make sure you are in <em>Edit</em> mode
+   <div class="container">
+    <div class="row">
+      {% placeholder "Headerliner" or %}
+        <p>This page has no content yet. Make sure you are in <em>Edit</em> mode
        (hit the <strong>Edit page</strong> button if required). Then switch to
        <em>Structure</em> mode.</p>
-  {% endplaceholder %}
+      {% endplaceholder %}
+    </div>
+    <div class="row">
+      <div class="col-md-9 border-primary">
+        {% placeholder 'News Items' %}
+      </div>
+      <div class="col-md-3 border-primary">
+        {% placeholder 'Archived Items' %}
+      </div>
+    </div>
+  </div>
 {% endblock content %}
